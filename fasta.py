@@ -16,21 +16,21 @@ import logging
 from fragment import Sequence
 
 try:
-    OPTS, ARGS = getopt.getopt(sys.argv[1:], 'i:d', ['inputfile=','debug'])
+    OPTS, ARGS = getopt.getopt(sys.argv[1:], 'i:d', ['inputfile=', 'debug'])
 except getopt.GetoptError:
     print 'Usage: driver.py -i <inputfile> [--debug]'
     exit(2)
 
 
-verbosity = logging.INFO
+VERBOSITY = logging.INFO
 
 for opt, arg in OPTS:
     if opt in ("-i", "--inputfile"):
         inputfile = arg
     if opt in ("-d", "--debug"):
-        verbosity = logging.DEBUG
+        VERBOSITY = logging.DEBUG
 
-logging.basicConfig(level=verbosity,
+logging.basicConfig(level=VERBOSITY,
                     format='%(asctime)s %(levelname)s %(message)s') # %(name)s
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("requests").setLevel(logging.WARNING)
@@ -105,7 +105,7 @@ while len(sequences) > 1:
                 sequences.append(merged_list)
                 break
             else:
-                LOGGER.debug("No match found between lists {} and {}".format(i,j))
+                LOGGER.debug("No match found between lists {} and {}".format(i, j))
 
     if previous_size == len(sequences):
         # We did not find any sequences to merge.
