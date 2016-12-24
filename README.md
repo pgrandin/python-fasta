@@ -6,8 +6,9 @@ reconstruct the unique sequence based upon all of the input fragments.
 
 Example usage :
 
-$ python fasta.py -i example.txt
+```$ python fasta.py -i example.txt
 ATTAGACCTGCCGGAATAC
+```
 
 # Saving the output :
 $ python fasta.py -i example.txt > output.txt
