@@ -7,7 +7,7 @@ by at least 50% of their length.
 """
 
 __author__ = "Pierre Grandin"
-__email__ = "linkedin@kazer.org"
+__email__ = "github@kazer.org"
 
 
 from suffixtree import SuffixTree
@@ -197,7 +197,7 @@ class Sequence(object):
         of all the fragments correctly merged together.
         Optional arguments allow to specify the max width of the returned
         string, along with the line termination character(s) (defaults to
-        '\n'
+        '\n')
         """
         current = self.head
         out = ""
